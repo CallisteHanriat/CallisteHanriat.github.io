@@ -1,0 +1,34 @@
+body {
+  background-color: #8f9df7;
+
+}
+
+#number_of_likes {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+}
+
+#search_box {
+    width : 25%;
+    margin : auto;
+}
+
+#inputPageId {
+    width : 100%;
+}
+
+#tow_buttons {
+    width : 100%;
+    margin : auto;
+}
+
+#submitButton {
+    width : 100%;
+}
+
+#loginButton {
+    width : 100%;
+}
