@@ -1,6 +1,18 @@
 body {
-  background-color: #8f9df7;
+  background-color: #fafafa;
+  margin-top: 5%;
+  font-family: Roboto;
+  line-height: 1.4;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 16px;
+}
 
+.intro_text {
+  position: relative;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
 }
 
 #number_of_likes {
@@ -8,11 +20,12 @@ body {
     width: 100%;
     margin: auto;
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
 }
 
 #search_box {
-    width : 25%;
+    padding-top: 5%;
+    width : 30%;
     margin : auto;
 }
 
@@ -21,14 +34,22 @@ body {
 }
 
 #tow_buttons {
+    margin-top: 2px;
     width : 100%;
-    margin : auto;
+    height: 34px;
 }
 
+.col-md-6 {
+  height: 100%;
+  padding: 0px;
+}
 #submitButton {
-    width : 100%;
+    width : 99%;
+    height: 100%;
 }
 
 #loginButton {
-    width : 100%;
+    width : 99%;
+    float: right;
+    height: 100%;
 }
