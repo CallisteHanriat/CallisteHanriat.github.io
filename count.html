@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="odometer-theme-minimal.css" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
     <link rel="stylesheet" href="liveCount.css" >
+
+    <LINK REL="SHORTCUT ICON"
+       HREF="iconLiveCount.png">
     <meta charset="utf-8">
     <title>count</title>
   </head>
@@ -12,20 +15,23 @@
     <div class="intro_text">Made by Calliste, Elon Musk's spiritual son.</div>
     <div id="search_box">
         <input placeholder = "Facebook page URL here" class="form-control" type="text" name="pageId" value="" id="inputPageId"/>
-        <div id = "tow_buttons" class="">
-            <div class =    "col-md-6">
+        <div id = "tow_buttons" >
+            <div class =    "col-md-6" id="goButtonBox">
                 <button type="button" name="button" id="submitButton" class= "btn btn-xs btn-danger">Go ! </button>
             </div>
 
-            <div class="col-md-6">
-                <button type="button" name="button" id="loginButton" class="btn btn-xs btn-primary">login with fb (js)</button>
+            <div class="col-md-6" id="loginButtonBox">
+                <button type="button" name="button" id="loginButton" class="btn btn-xs btn-primary">login with fb</button>
             </div>
         </div>
         <br>
     </div>
     <div id="number_of_likes"></div>
 
-    <h1 id="fb-welcome"></h1>
+    <div class="lastText">
+      <div id="text_initial_value"></div>
+      <div id="initial_number"></div>
+    </div>
 
 
     <script src="odometer.min.js"></script>

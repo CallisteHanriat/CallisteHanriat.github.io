@@ -16,6 +16,7 @@ body {
 }
 
 #number_of_likes {
+    padding-top: 5%;
     position: relative;
     width: 100%;
     margin: auto;
@@ -25,7 +26,7 @@ body {
 
 #search_box {
     padding-top: 5%;
-    width : 30%;
+    width : 40%;
     margin : auto;
 }
 
@@ -43,13 +44,34 @@ body {
   height: 100%;
   padding: 0px;
 }
+
 #submitButton {
-    width : 99%;
+    width : 100%;
     height: 100%;
 }
 
 #loginButton {
-    width : 99%;
-    float: right;
+    width : 100%;
     height: 100%;
+}
+
+.lastText {
+  padding-top: 100px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin: auto;
+}
+
+#text_initial_value {
+  width: auto;
+  display: inline-block;
+  text-align: right;
+}
+
+#initial_number {
+  width: auto;
+  display: inline-block;
+  text-align: left;
+  font-size: 25px;
 }
