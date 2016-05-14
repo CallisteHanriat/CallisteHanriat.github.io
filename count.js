@@ -59,6 +59,7 @@ function set_initial_state () {
         'GET',
         function(response) {
           $("#text_initial_value").text("Initial value of " + response.name +  " was ");
+          $(".intro_text").text("Live facebook fan page for " + response.name);
           name_of_page = response.name;
         }
       );
