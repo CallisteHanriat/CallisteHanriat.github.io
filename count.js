@@ -77,50 +77,26 @@ function actionWithLoginOrNot() {
         // the user's ID, a valid access token, a signed
         // request, and the time the access token
         // and signed request each expire
-        console.log("je suis vrai");
         isCo =  1;
         startCounter();
 
       } else if (response.status === 'not_authorized') {
         // the user is logged in to Facebook,
         // but has not authenticated your app
-        console.log("je suis moyen vrai");
         isCo =  1;
-        startCounter();
-
+        login();
       } else {
         // the user isn't logged in to Facebook.
-        console.log("je suis faux");
-        isCo =  0;
-        alert("you need to be connected with facebook ! ");
+        isCo = 0;
+        login();
       }
     });
 
 
 }
 
-/*function findAccessToken(responseFromAuthor) {
-    FB.getLoginStatus(function(response) {
-      if (response.status === 'connected') {
-        // the user is logged in and has authenticated your
-        // app, and response.authResponse supplies
-        // the user's ID, a valid access token, a signed
-        // request, and the time the access token
-        // and signed request each expire
-        var uid = response.authResponse.userID;
-        var accessToken = response.authResponse.accessToken;
 
-      } else if (response.status === 'not_authorized') {
-        // the user is logged in to Facebook,
-        // but has not authenticated your app
-      } else {
-        // the user isn't logged in to Facebook.
-      }
-    });
-}
-*/
 function login() {
-    console.log("login");
     FB.login(function(response) {
               if (response.authResponse) {
                    console.log('Welcome!  Fetching your information.... ');
