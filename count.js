@@ -1,5 +1,5 @@
 var name_of_page;
-var firstTime;
+var firstTime = 0;
 
 function change_like_number(number_likes) {
   var elem = document.querySelector('#number_of_likes');
@@ -52,6 +52,7 @@ update.live = function() {
     'GET',
     {"fields":"fan_count"},
     function(response) {
+      console.log("firstTime " + firstTime);
       checkLoginState();
       if (firstTime > 0)
         change_like_number(response.fan_count);
