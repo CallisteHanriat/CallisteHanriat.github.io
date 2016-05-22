@@ -69,25 +69,6 @@ function set_initial_state () {
   );
 }
 
-function statusChangeCallback(response) {
-    if (response.status === 'connected') {
-      // the user is logged in and has authenticated your
-      // app, and response.authResponse supplies
-      // the user's ID, a valid access token, a signed
-      // request, and the time the access token
-      // and signed request each expire
-      isCo =  1;
-      startCounter();
-      console.log("logged");
-    }
-}
-
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-
 function actionWithLoginOrNot() {
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
@@ -125,7 +106,7 @@ function login() {
         console.log('User cancelled login or did not fully authorize.');
      }
    }, {scope: 'email,user_likes'});
-   checkLoginState();
+   startCounter();
 }
 
 function onload() {
