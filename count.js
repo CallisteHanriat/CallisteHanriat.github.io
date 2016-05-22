@@ -18,9 +18,10 @@ function change_like_number(number_likes) {
 function statusChangeCallback(response) {
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
-    if (firstTime == 0)
+    if (firstTime == 0) {
       startCounter();
-    firstTime++;
+      firstTime++;
+    }
   }
 }
 
