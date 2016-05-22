@@ -70,7 +70,6 @@ function set_initial_state () {
 }
 
 function loginStatusCallback(response) {
-  FB.getLoginStatus(function(response) {
     if (response.status === 'connected') {
       // the user is logged in and has authenticated your
       // app, and response.authResponse supplies
@@ -79,6 +78,7 @@ function loginStatusCallback(response) {
       // and signed request each expire
       isCo =  1;
       startCounter();
+    }
 }
 
 function actionWithLoginOrNot() {
@@ -118,6 +118,7 @@ function login() {
         console.log('User cancelled login or did not fully authorize.');
      }
    }, {scope: 'email,user_likes'});
+
    FB.getLoginStatus(function(response) {
     loginStatusCallback(response);
   });
