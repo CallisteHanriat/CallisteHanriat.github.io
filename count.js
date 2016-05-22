@@ -1,4 +1,5 @@
 var name_of_page;
+var firstTime;
 
 function change_like_number(number_likes) {
   var elem = document.querySelector('#number_of_likes');
@@ -11,7 +12,10 @@ function change_like_number(number_likes) {
     duration : 3000
   });
   elem.innerHTML = number_likes;
+  if (firstTime==0)
+    set_initial_state();
   document.title = name_of_page + " " + number_likes;
+  firstTime++;
 }
 
 function startCounter() {
@@ -106,7 +110,6 @@ function login() {
         console.log('User cancelled login or did not fully authorize.');
      }
    }, {scope: 'email,user_likes'});
-   startCounter();
 }
 
 function onload() {
