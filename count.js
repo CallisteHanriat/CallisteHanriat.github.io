@@ -12,10 +12,25 @@ function change_like_number(number_likes) {
     duration : 3000
   });
   elem.innerHTML = number_likes;
-  if (firstTime==0)
-    set_initial_state();
   document.title = name_of_page + " " + number_likes;
-  firstTime++;
+}
+
+function statusChangeCallback(response) {
+  if (response.status === 'connected') {
+    // Logged into your app and Facebook.
+    if (firstTime == 0)
+      startCounter();
+    firstTime++;
+  }
+}
+
+// This function is called when someone finishes with the Login
+// Button.  See the onlogin handler attached to it in the sample
+// code below.
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
 }
 
 function startCounter() {
@@ -36,7 +51,9 @@ update.live = function() {
     'GET',
     {"fields":"fan_count"},
     function(response) {
-      change_like_number(response.fan_count);
+      checkLoginState();
+      if (firstTime > 0)
+        change_like_number(response.fan_count);
     }
   );
 }
@@ -110,6 +127,7 @@ function login() {
         console.log('User cancelled login or did not fully authorize.');
      }
    }, {scope: 'email,user_likes'});
+   startCounter();
 }
 
 function onload() {
