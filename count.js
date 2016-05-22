@@ -52,7 +52,6 @@ update.live = function() {
     'GET',
     {"fields":"fan_count"},
     function(response) {
-      console.log("firstTime " + firstTime);
       checkLoginState();
       if (firstTime > 0)
         change_like_number(response.fan_count);
