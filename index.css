@@ -1,0 +1,10 @@
+body {
+  background-color: #37474f;
+}
+.btn-outline {
+  background-color: Transparent;
+  border-color: #fcfcfc;
+}
+.btn-outline:hover {
+  background-color: #fdd835;
+}
