@@ -133,7 +133,28 @@ function login() {
 
 function onload() {
   $("#submitButton").on("click", function(){
-    onClickSubmitButton();
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        // the user is logged in and has authenticated your
+        // app, and response.authResponse supplies
+        // the user's ID, a valid access token, a signed
+        // request, and the time the access token
+        // and signed request each expire
+        isCo =  1;
+        startCounter();
+
+      } else if (response.status === 'not_authorized') {
+        // the user is logged in to Facebook,
+        // but has not authenticated your app
+        isCo =  1;
+        login();
+      } else {
+        // the user isn't logged in to Facebook.
+        isCo = 0;
+        login();
+      }
+    });
+   onClickSubmitButton();
   });
   $("#loginButton").on("click", function(){
     login();
