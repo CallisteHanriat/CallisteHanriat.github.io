@@ -147,11 +147,29 @@ function onload() {
         // the user is logged in to Facebook,
         // but has not authenticated your app
         isCo =  1;
-        login();
+        FB.login(function(response) {
+          if (response.authResponse) {
+             console.log('Welcome!  Fetching your information.... ');
+             FB.api('/me', function(response) {
+             console.log('Good to see you, ' + response.name + '.');
+          });
+         } else {
+            console.log('User cancelled login or did not fully authorize.');
+         }
+       }, {scope: 'email,user_likes'});
       } else {
         // the user isn't logged in to Facebook.
         isCo = 0;
-        login();
+        FB.login(function(response) {
+          if (response.authResponse) {
+             console.log('Welcome!  Fetching your information.... ');
+             FB.api('/me', function(response) {
+             console.log('Good to see you, ' + response.name + '.');
+          });
+         } else {
+            console.log('User cancelled login or did not fully authorize.');
+         }
+       }, {scope: 'email,user_likes'});
       }
     });
    onClickSubmitButton();
