@@ -8,3 +8,7 @@ body {
 .btn-outline:hover {
   background-color: #fdd835;
 }
+
+#portrait {
+  border-radius: 50%;
+}
